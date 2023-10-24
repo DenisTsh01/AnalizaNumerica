@@ -3,6 +3,8 @@ def bisectie(f, a, b, ITMAX, TOL, OPT=1):
     an, bn = a, b
     xn = 0
     while n < ITMAX:
+        if f(a) * f(b) >= 0:
+            raise ValueError("Nu e continua")
         xn = an + (bn - an) / 2
         
         if OPT == 1:
